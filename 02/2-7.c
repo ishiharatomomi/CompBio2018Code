@@ -10,7 +10,7 @@ k=100;
 x=1;
 x=x+r*(1-x/k)*x;
 fp=fopen("output.dat","w");
-fprintf(fp,"%d %d\n",t,x);
+fprintf(fp,"%d\n",x);
 fclose(fp);
 fp=fopen("output.dat","a");
 
