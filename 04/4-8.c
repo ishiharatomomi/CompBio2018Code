@@ -9,15 +9,15 @@ double xx[2];
 double a,b,c,d,e,f;
 
 FILE *fp;
-fp=fopen("output_4-8(1).csv","w");
+fp=fopen("output_4-8(4).csv","w");
 
 dt=0.0001;
 a=1.0;
-b=3.0;
-c=2.0;
-d=2.0;
-e=1.0;
-f=2.0;
+b=100.0;
+c=1.0;
+d=5.0;
+e=3.0;
+f=100.0;
 
 t=0.0;
 x[0]=0.4;
