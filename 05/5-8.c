@@ -5,8 +5,8 @@
 #define k 10
 
 int main(){
-int a[N],aa[N],i,t,r1,r2,r,sum,tsum=0,c,count=0;
-double ave,p;
+int a[N],aa[N],i,t,r1,r2,r,x,y=0,c,count=0;
+double T,p;
 srand(time(NULL));
 p=(double)k/(double)N;
 
@@ -40,19 +40,19 @@ a[i]=aa[i];
 }
 // printf("\n");
 for(i=0;i<N;i++){
-sum=sum+a[i];
+x=x+a[i];
 }
 if(sum==N){
 count++;
-tsum=tsum+(t+1);
+y=y+(t+1);
 printf("%d\n",t+1);
 break;
 }
 }
 }
 }
-ave=(double)tsum/(double)count;
-printf("%d %d %.3f\n",count,tsum,ave);
+T=(double)y/(double)count;
+printf("%d %d %.3f\n",count,y,T);
 printf("%f\n",p);
 return 0;
 }

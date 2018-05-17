@@ -5,7 +5,7 @@
 #define k 181
 
 int main(){
-int a[N],aa[N],i,t,r1,r2,r,sum,tsum=0,c,count=0;
+int a[N],aa[N],i,t,r1,r2,r,x,y=0,z,count=0;
 double T,p;
 
 FILE *fp;
@@ -14,7 +14,7 @@ fp=fopen("output_5-9(2).csv","a");
 srand(time(NULL));
 p=(double)k/(double)N;
 
-  for(c=0;c<200;c++){
+  for(z=0;z<200;z++){
     while (count<200) {
     for(i=0;i<N;i++){
       if(i<k){
@@ -44,20 +44,20 @@ a[i]=aa[i];
 }
 // printf("\n");
 for(i=0;i<N;i++){
-sum=sum+a[i];
+x=x+a[i];
 }
 if(sum==N){
 count++;
-tsum=tsum+(t+1);
+y=y+(t+1);
 //printf("%d\n",t+1);
 break;
 }
 }
 }
 }
-T=(double)tsum/(double)count;
+T=(double)y/(double)count;
 
-fprintf(fp,"%d,%d,%d,%.3f,%f\n",N,count,tsum,T,p);
+fprintf(fp,"%d,%d,%d,%.3f,%f\n",N,count,y,T,p);
 
 fclose(fp);
 
