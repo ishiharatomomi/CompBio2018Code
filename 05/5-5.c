@@ -9,8 +9,8 @@ double b,c;
 srand(time(NULL));
 M=1;
 N=6;
-x=0;
 b=0;
+
 for (a = 0; a < 1000; a++) {
   x=0;
 for (i = 0; i < 100 ; i++) {

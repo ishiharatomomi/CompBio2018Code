@@ -6,7 +6,7 @@
 
 int main(){
 int a[N],aa[N],i,t,r1,r2,r,sum,tsum=0,c,count=0;
-double ave,p;
+double T,p;
 
 FILE *fp;
 fp=fopen("output_5-9(2).csv","a");
@@ -14,8 +14,8 @@ fp=fopen("output_5-9(2).csv","a");
 srand(time(NULL));
 p=(double)k/(double)N;
 
-  for(c=0;c<500;c++){
-    while (count<3) {
+  for(c=0;c<200;c++){
+    while (count<200) {
     for(i=0;i<N;i++){
       if(i<k){
         a[i]=1;
@@ -25,7 +25,7 @@ p=(double)k/(double)N;
   }
   }
 
-for(t=0;t<100;t++){
+for(t=0;t<400;t++){
 sum=0;
 for(i=0;i<N;i++){
 r1=rand()%N;
@@ -55,9 +55,9 @@ break;
 }
 }
 }
-ave=(double)tsum/(double)count;
+T=(double)tsum/(double)count;
 
-fprintf(fp,"%d %d %d %.3f %f\n",N,count,tsum,ave,p);
+fprintf(fp,"%d,%d,%d,%.3f,%f\n",N,count,tsum,T,p);
 
 fclose(fp);
 
