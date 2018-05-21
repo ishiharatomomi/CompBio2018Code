@@ -9,13 +9,13 @@ int a[N],aa[N],i,t,r1,r2,r,x,y=0,z,count=0;
 double T,p;
 
 FILE *fp;
-fp=fopen("output_5-9(2).csv","a");
+fp=fopen("output_5-9(4).csv","a");
 
 srand(time(NULL));
 p=(double)k/(double)N;
 
-  for(z=0;z<200;z++){
-    while (count<200) {
+  for(z=0;z<100;z++){
+    while (count<100) {
     for(i=0;i<N;i++){
       if(i<k){
         a[i]=1;
@@ -26,7 +26,7 @@ p=(double)k/(double)N;
   }
 
 for(t=0;t<400;t++){
-sum=0;
+x=0;
 for(i=0;i<N;i++){
 r1=rand()%N;
 r2=rand()%N;
@@ -46,7 +46,7 @@ a[i]=aa[i];
 for(i=0;i<N;i++){
 x=x+a[i];
 }
-if(sum==N){
+if(x==N){
 count++;
 y=y+(t+1);
 //printf("%d\n",t+1);
@@ -57,7 +57,7 @@ break;
 }
 T=(double)y/(double)count;
 
-fprintf(fp,"%d,%d,%d,%.3f,%f\n",N,count,y,T,p);
+fprintf(fp,"%d,%d,%d,%f,%.3f\n",N,count,y,p,T);
 
 fclose(fp);
 
