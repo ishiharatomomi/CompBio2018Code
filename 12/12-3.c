@@ -115,16 +115,23 @@ fprintf(fp,"%f,%f,%f,%f\n",t,x[1],xmax_th,xmax_ex);
        alpha=0;
      }
      else{
-       gamma=0;
+      gamma=pow((Th-xmax_ex),s);
      }
    }
 }
 //ここまでで治療なし・あり(j=0,1)両方の計算が終了
 //スコア算出
-score=alpha+beta+gamma;
+score=3*alpha+beta+2*gamma;
 
 //画面上に表示
 printf("alpha=%f,beta=%f,gamma=%f,score=%f\n",alpha,beta,gamma,score);
+
+if (score>1) {
+  printf("OK\n");
+}
+else{
+  printf("NO\n");
+}
 
 fclose(fp);
 

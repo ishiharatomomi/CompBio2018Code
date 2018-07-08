@@ -8,17 +8,17 @@ double a,A,b,c,dh,dr,m,n,P,t,T,dt,Th,xmax_th,xmax_ex,alpha,beta,gamma,s,score,x[
 
 //ファイルを開く
 FILE *fp;
-fp=fopen("allergy_odeC.csv","w");
+fp=fopen("allergy_odeB.csv","w");
 
-//C患者の置かれる条件に当たるパラメータ
+//B患者の置かれる条件に当たるパラメータ
 a=2.0;
 A=10.0;
 b=10.0;
 c=0.9;
 dh=0.05;
-dr=0.01;
+dr=0.001;
 m=0.045;
-n=20.0;
+n=200.0;
 T=9000.0;
 
 //アレルギー発症の閾値
@@ -121,17 +121,12 @@ fprintf(fp,"%f,%f,%f,%f\n",t,x[1],xmax_th,xmax_ex);
 }
 //ここまでで治療なし・あり(j=0,1)両方の計算が終了
 //スコア算出
-score=3*alpha+beta+2*gamma;
+score=2*alpha+beta+2*gamma;
 
 //画面上に表示
+printf("%f\n",xmax_ex);
 printf("alpha=%f,beta=%f,gamma=%f,score=%f\n",alpha,beta,gamma,score);
 
-if (score>1) {
-  printf("OK\n");
-}
-else{
-  printf("NO\n");
-}
 fclose(fp);
 
   return 0;
